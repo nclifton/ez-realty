@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+	<name>EZ Realty</name>
+	<author>Kathy Strickland (aka PixelBunyiP) - Neil Clifton</author>
+	<creationDate>1st May 2015</creationDate>
+	<copyright>(C) 2006-2014 K.J. Strickland, Raptor Developments Pty Ltd T/as Raptor Services. - (C) 2016 Neil Clifton, Clifton IT Foundries Pty Ltd</copyright>
+	<license>Creative Commons GNU GPL, see http://creativecommons.org/licenses/GPL/2.0/ for full license</license>
+	<authorEmail>kathy@raptorservices.com,neil.clifton@cliftonwebfoundry.com.au</authorEmail>
+	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
+	<version>7.2.1</version>
+	<description>
+		<![CDATA[
+	<br />
+	<table>
+		<tr>
+			<td class="sectionname" valign="top">Welcome to EZ Realty - a simple Real Estate component big on features and configurable options for Joomla! 3.0x powered sites.</td>
+		</tr>
+		<tr>
+			<td><br />
+			Now that installation is complete - it's time to set up the 
+			configuration area, specify your property categories, define the 
+			localities, states, and countries, update the configuration settings, and enter 
+			your property listing details. <br /><br /><strong>Enjoy your new software!</strong></td>
+		</tr>
+		</table>
+		]]>
+	</description>
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="site">
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>ezrealty.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<filename>router.php</filename>
+	</files>
+
+	<administration>
+		<menu link="option=com_ezrealty" img="components/com_ezrealty/assets/images/helloworld.png">com_ezrealty</menu>
+		<submenu>
+			<menu link="option=com_ezrealty" img="class:config">com_ezrealty_ezrealty</menu>
+			<menu link="option=com_ezrealty&amp;controller=categories" img="class:banners-cat">com_ezrealty_categories</menu>
+			<menu link="option=com_ezrealty&amp;controller=localities" img="class:module">com_ezrealty_localities</menu>
+			<menu link="option=com_ezrealty&amp;controller=states" img="class:install">com_ezrealty_states</menu>
+			<menu link="option=com_ezrealty&amp;controller=countrys" img="class:language">com_ezrealty_countrys</menu>
+			<menu link="option=com_ezrealty&amp;controller=agents" img="class:groups">com_ezrealty_agents</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>ezrealty.php</filename>
+			<filename>index.html</filename>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_ezrealty.ini</language>
+			<language tag="en-GB">language/en-GB.com_ezrealty.sys.ini</language>
+			<language tag="de-DE">language/de-DE.com_ezrealty.ini</language>
+			<language tag="de-DE">language/de-DE.com_ezrealty.sys.ini</language>
+			<language tag="es-ES">language/es-ES.com_ezrealty.ini</language>
+			<language tag="es-ES">language/es-ES.com_ezrealty.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR.com_ezrealty.ini</language>
+			<language tag="fr-FR">language/fr-FR.com_ezrealty.sys.ini</language>
+			<language tag="it-IT">language/it-IT.com_ezrealty.ini</language>
+			<language tag="it-IT">language/it-IT.com_ezrealty.sys.ini</language>
+			<language tag="nl-NL">language/nl-NL.com_ezrealty.ini</language>
+			<language tag="nl-NL">language/nl-NL.com_ezrealty.sys.ini</language>
+			<language tag="pt-BR">language/pt-BR.com_ezrealty.ini</language>
+			<language tag="pt-BR">language/pt-BR.com_ezrealty.sys.ini</language>
+			<language tag="ru-RU">language/ru-RU.com_ezrealty.ini</language>
+			<language tag="ru-RU">language/ru-RU.com_ezrealty.sys.ini</language>
+
+		</languages>
+	</administration>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_ezrealty.ini</language>
+		<language tag="de-DE">language/de-DE.com_ezrealty.ini</language>
+		<language tag="es-ES">language/es-ES.com_ezrealty.ini</language>
+		<language tag="fr-FR">language/fr-FR.com_ezrealty.ini</language>
+		<language tag="it-IT">language/it-IT.com_ezrealty.ini</language>
+		<language tag="nl-NL">language/nl-NL.com_ezrealty.ini</language>
+		<language tag="pt-BR">language/pt-BR.com_ezrealty.ini</language>
+		<language tag="ru-RU">language/ru-RU.com_ezrealty.ini</language>
+	</languages>
+</extension>
