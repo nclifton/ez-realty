@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EZREALTY_SUBURBS_VIEW_DEFAULT_TITLE" option="COM_EZREALTY_SUBURBS_VIEW_DEFAULT_OPTION">
+		<help
+			key="JHELP_MENUS_MENU_ITEM_WEBLINK_CATEGORY"
+		/>
+		<message>
+			<![CDATA[COM_EZREALTY_SUBURBS_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the parameters object for the layout. -->
+<fields name="params">
+<fieldset name="basic" addfieldpath="components/com_ezrealty/assets/elements" label="COM_EZREALTY_SUBURBS_OPTIONS">
+
+			<field name="show_suburbs_title" type="list"
+				label="EZREALTY_CONFIG_LOCSPAGE_SHOWCATTITLE"
+				description="EZREALTY_CONFIG_LOCSPAGE_SHOWCATTITLE_DESC"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+		<field name="subs_title" type="text" default=""
+			label="EZREALTY_CONFIG_LOCSPAGE_CATSTITLE"
+			description="" />
+
+			<field name="show_subs_propcount" type="list"
+				label="EZREALTY_CONFIG_CATSPAGE_SHOWPROPCOUNT"
+				description="EZREALTY_CONFIG_CATSPAGE_SHOWPROPCOUNT_DESC"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="show_subs_spotlight" type="list"
+				label="EZREALTY_CONFIG_CATSPAGE_SHOWSLLIST"
+				description="EZREALTY_CONFIG_CATSPAGE_SHOWSLLIST_DESC"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="show_subspot_title" type="list"
+				label="EZREALTY_CONFIG_CATSPAGE_SHOWSLTITLE"
+				description="EZREALTY_CONFIG_CATSPAGE_SHOWSLTITLE_DESC"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+		<field name="subs_spotlight_title" type="text" default=""
+			label="EZREALTY_CONFIG_CATSPAGE_SLLISTTITLE"
+			description="" />
+
+		<field name="subs_spotlight_number" type="text" default=""
+			label="EZREALTY_CONFIG_CATSPAGE_NUMSLITEMS"
+			description="EZREALTY_CONFIG_CATSPAGE_NUMSLITEMS_DESC" />
+
+</fieldset>
+
+<fieldset name="suburb" label="COM_EZREALTY_SUBURB_OPTIONS">
+			<field name="spacer3" type="spacer" class="text"
+			label="JGLOBAL_SUBSLIDER_DRILL_CATEGORIES_LABEL"
+			/>
+
+			<field name="show_suburb_title" type="list"
+				label="COM_EZREALTY_SUBURB_MENU_TITLE"
+				description="COM_EZREALTY_SUBURB_MENU_TITLE_DESC"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		
+			<field name="show_suburb_description" type="list"
+				description="COM_EZREALTY_SUBURB_MENU_DESCRIPTION_DESC"
+				label="COM_EZREALTY_SUBURB_MENU_DESCRIPTION"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="show_suburb_image" type="list"
+				description="COM_EZREALTY_SUBURB_MENU_IMAGE_DESC"
+				label="COM_EZREALTY_SUBURB_MENU_IMAGE"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+		<field name="suburb_resolution" type="text" default=""
+			label="COM_EZREALTY_SUBURB_MAPRES"
+			description="EZREALTY_CONFIG_LISTMAPRESDESC" />
+
+</fieldset>
+
+<fieldset name="advanced" label="JGLOBAL_LIST_LAYOUT_OPTIONS" >
+			<field name="spacer6" type="spacer" class="text"
+					label="JGLOBAL_SUBSLIDER_DRILL_CATEGORIES_LABEL"
+			/>
+
+
+
+
+
+		<field name="dynfilt_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_SCHLPAGE" description="" />
+
+			<field name="show_categories_select" type="list" label="COM_EZREALTY_DISPLAY_CATG_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_transtype_select" type="list" label="COM_EZREALTY_DISPLAY_TRANS_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_marketstatus_select" type="list" label="COM_EZREALTY_DISPLAY_MARKET_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_sellers_select" type="list" label="COM_EZREALTY_DISPLAY_SELLERS_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_minmaxprice_select" type="list" label="COM_EZREALTY_DISPLAY_MINMAXPRICE_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_minbedsbaths_select" type="list" label="COM_EZREALTY_DISPLAY_MINBEDSBATHS_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_minmaxarea_select" type="list" label="COM_EZREALTY_DISPLAY_MINMAXAREA_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_keyword_select" type="list" label="COM_EZREALTY_DISPLAY_KEYWORD_SELECT" description="COM_EZREALTY_DISPLAY_KEYWORD_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_dates_select" type="list" label="COM_EZREALTY_DISPLAY_DATES_SELECT" description="COM_EZREALTY_DISPLAY_DATES_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_custom1_select" type="list" label="COM_EZREALTY_DISPLAY_CUSTOM1_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+		<field name="gendat_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_GENINFOSETTINGS" description="" />
+
+			<field name="title_source" type="list" description="COM_EZREALTY_DISPLAY_TITLESOURCE_DESC" label="COM_EZREALTY_DISPLAY_TITLESOURCE">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_EZREALTY_DISPLAY_TITLESOURCE1</option>
+				<option value="1">COM_EZREALTY_DISPLAY_TITLESOURCE2</option>
+				<option value="2">COM_EZREALTY_DISPLAY_TITLESOURCE3</option>
+			</field>
+			<field name="title_price" type="list" description="COM_EZREALTY_DISPLAY_PRICE_DESC" label="COM_EZREALTY_DISPLAY_PRICE">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="title_status" type="list" description="COM_EZREALTY_DISPLAY_STATUS_DESC" label="COM_EZREALTY_DISPLAY_STATUS">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_create_date" type="list" description="COM_EZREALTY_DISPLAY_CREATEDATE_DESC" label="COM_EZREALTY_DISPLAY_CREATEDATE">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_small_desc" type="list" description="COM_EZREALTY_DISPLAY_SMALLDESC_DESC" label="COM_EZREALTY_DISPLAY_SMALLDESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_icons" type="list" description="COM_EZREALTY_DISPLAY_ICONS_DESC" label="COM_EZREALTY_DISPLAY_ICONS">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_openhousedate" type="list" description="COM_EZREALTY_DISPLAY_OHOUSE_COL_DESC" label="COM_EZREALTY_DISPLAY_OHOUSE_COL">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_auctiondate" type="list" description="COM_EZREALTY_DISPLAY_AUC_COL_DESC" label="COM_EZREALTY_DISPLAY_AUC_COL">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="restrict_sold" type="list" description="EZREALTY_CONFIG_INCLSOLD_DESC" label="EZREALTY_CONFIG_INCLSOLD">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+		<field name="mapping_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_MAPSETTINGS" description="" />
+
+			<field name="er_uselistmap" type="list" description="COM_EZREALTY_CONFIG_SHOWMAP_DESC" label="COM_EZREALTY_CONFIG_SHOWMAP">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="er_listmapres" type="text" label="EZREALTY_CONFIG_LISTMAPRES" description="EZREALTY_CONFIG_LISTMAPRESDESC" />
+
+			<field name="er_listmapheight" type="text" label="EZREALTY_CONFIG_LISTMAPHEIGHT" description="EZREALTY_CONFIG_LISTMAPHEIGHTDESC" />
+
+			<field name="er_listmaplat" type="text" label="EZREALTY_CONFIG_LISTMAPLAT" description="EZREALTY_CONFIG_LISTMAPLAT_DESC" />
+
+			<field name="er_listmaplong" type="text" label="EZREALTY_CONFIG_LISTMAPLONG" description="EZREALTY_CONFIG_LISTMAPLONG_DESC" />
+
+		<field name="page_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_PAGSETTINGS" description="" />
+
+			<field name="show_pagination" type="list" label="JGLOBAL_PAGINATION_LABEL" description="JGLOBAL_PAGINATION_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="2">JGLOBAL_AUTO</option>
+			</field>
+			<field name="show_pagination_results" type="list" label="JGLOBAL_PAGINATION_RESULTS_LABEL" description="JGLOBAL_PAGINATION_RESULTS_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_pagination_limit" type="list" label="COM_EZREALTY_DISPLAY_DNOSEL_SELECT" description="JGLOBAL_DISPLAY_SELECT_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+	</fieldset>
+
+	<fieldset name="article" label="COM_EZREALTY_CONFIG_PROPERTYLAYOUT">
+
+		<field name="tools_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_SOCLSETTINGS" description="" />
+
+			<field name="social_tweet" type="list" description="COM_EZREALTY_CONFIG_TWEET_DESC" label="COM_EZREALTY_CONFIG_TWEET">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="social_gplus" type="list" description="COM_EZREALTY_CONFIG_GPLUS_DESC" label="COM_EZREALTY_CONFIG_GPLUS">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="social_facebook" type="list" description="COM_EZREALTY_CONFIG_FACEBOOK_DESC" label="COM_EZREALTY_CONFIG_FACEBOOK">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="use_print" type="list" description="COM_EZREALTY_DISPLAY_PRINT_SELECT_DESC" label="COM_EZREALTY_DISPLAY_PRINT_SELECT">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="er_viewrecommend" type="list" description="EZREALTY_CONFIG_RECFRIENDDESC" label="EZREALTY_CONFIG_RECFRIEND">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+		<field name="fuldetpage_setting" type="ezparamhelper" default="" function="@title" label="COM_EZREALTY_CONFIG_PAGE_LAYOUT_DESC" description="" />
+
+			<field name="which_page_title" type="list" description="COM_EZREALTY_PAGE_TITLE_DESC" label="COM_EZREALTY_DISPLAY_TITLESOURCE">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_EZREALTY_DISPLAY_TITLESOURCE1</option>
+				<option value="1">EZREALTY_TABS_ADDRESS</option>
+			</field>
+
+			<field name="er_imglayout" type="list" label="EZREALTY_CONFIG_IMAGE_LAYOUT" description="EZREALTY_CONFIG_IMAGE_LAYOUT_DESC">
+
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="images">COM_EZREALTY_IMGLAYOUT11</option>
+				<option value="minimalist">COM_EZREALTY_IMGLAYOUT5</option>
+				<option value="galleria">COM_EZREALTY_IMGLAYOUT10</option>
+
+			</field>
+			<field name="er_imgfilesys" type="list" label="EZREALTY_CONFIG_IMGFILES" description="EZREALTY_CONFIG_IMGFILES_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">EZREALTY_CONFIG_IMGFILES_NONE</option>
+				<option value="1">COM_EZREALTY_CONFIG_IMGFILES_MODAL</option>
+				<option value="2">EZREALTY_CONFIG_IMGFILES_HIGHSLIDE</option>
+			</field>
+
+			<field name="er_useprofile" type="list" label="EZREALTY_CONFIG_SHOWPROF" description="EZREALTY_CONFIG_SHOWPROF_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="er_schoolprof" type="list" label="EZREALTY_VIEW_SCHOOL_PROFILE" description="EZREALTY_VIEW_SCHOOL_PROFILE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="er_hoodprof" type="list" label="EZREALTY_VIEW_HOOD_PROFILE" description="EZREALTY_VIEW_HOOD_PROFILE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="er_amenities" type="list" label="COM_EZREALTY_CONFIG_AMENITIES" description="COM_EZREALTY_CONFIG_AMENITIES_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="target" type="list" description="COM_EZREALTY_CONFIG_PAGEWIN_DESC" label="COM_EZREALTY_CONFIG_PAGEWIN">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JBROWSERTARGET_PARENT</option>
+				<option value="1">JBROWSERTARGET_NEW</option>
+				<option value="2">JBROWSERTARGET_POPUP</option>
+			</field>
+
+			<field name="width" type="text" label="COM_EZREALTY_CONFIG_WINWIDTH" description="COM_EZREALTY_CONFIG_WINWIDTHDESC" />
+
+			<field name="height" type="text" label="COM_EZREALTY_CONFIG_WINHEIGHT" description="COM_EZREALTY_CONFIG_WINHEIGHTDESC" />
+
+		<field name="map_setting" type="ezparamhelper" default="" function="@title" label="EZREALTY_CONFIG_MAPSETTINGS" description="" />
+
+			<field name="er_usemap" type="list" label="EZREALTY_CONFIG_USEMAP" description="EZREALTY_CONFIG_USEMAPDESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field name="er_mapres" type="text" label="EZREALTY_CONFIG_MAPRES" description="EZREALTY_CONFIG_MAPRESDESC" />
+
+			<field name="er_mapheight" type="text" label="EZREALTY_CONFIG_MAPHEIGHT" description="EZREALTY_CONFIG_MAPHEIGHTDESC" />
+
+	</fieldset>
+
+
+		<fieldset name="integration">
+
+			<field name="show_feed_link" type="list"
+				description="JGLOBAL_SHOW_FEED_LINK_DESC"
+				label="JGLOBAL_SHOW_FEED_LINK_LABEL"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="feed_summary" type="list"
+				description="JGLOBAL_FEED_SUMMARY_DESC"
+				label="JGLOBAL_FEED_SUMMARY_LABEL"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JGLOBAL_INTRO_TEXT</option>
+				<option value="1">JGLOBAL_FULL_TEXT</option>
+			</field>
+		</fieldset>
+</fields>
+</metadata>
+
