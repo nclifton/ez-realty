@@ -2,11 +2,14 @@
 
 /**
 * @package EZ Realty
-* @version 7.2.0
-* @author  Kathy Strickland (aka PixelBunyiP) - Raptor Services <kathy@raptorservices.com>
-* @link    http://www.raptorservices.com
-* @copyright Copyright (C) 2006 - 2014 Raptor Developments Pty Ltd T/as Raptor Services-All rights reserved
+* @version 7.2.1
+* @author  Neil Clifton - Clifton Web Foundry <neil.clifton@cliftonwebfoundry.com.au>
+* @link    http://cliftonwebfoundry.com.au
+* @copyright Copyright (C) 2016 Clifton IT Foundries Pty Ltd - All rights reserved
 * @license Creative Commons GNU GPL, see http://creativecommons.org/licenses/GPL/2.0/ for full license.
+ *
+ * 2016-05-1 : Forked. Modified to be compatible with Joomla version 3.5.1. See newMailmsg, updateMailmsg and sendMsg.
+ *
 **/
 
 // no direct access
@@ -1444,72 +1447,62 @@ class EZRealtyFHelper {
 
 	function newMailmsg ( $theid ) {
 
-		$app		= JFactory::getApplication();
 		$params = JComponentHelper::getParams ('com_ezrealty');
 
 		# Build the message
 
 		$subject= stripslashes ( $params->get( 'er_bizname' ) ) .' '. JText::_('EZREALTY_NEWLISTING_SAVED_SUBJECT');
-		$message.=JText::_('EZREALTY_NEWLISTING_SAVED_MESSAGE')."\r\n\r\n";
+		$message=JText::_('EZREALTY_NEWLISTING_SAVED_MESSAGE')."\r\n\r\n";
 		$message.=JText::_('EZREALTY_AD_NUMBER')." $theid \r\n ";
-
-		# Send the message
-
-		$mailfrom	= $app->getCfg('mailfrom');
-		$fromname	= $app->getCfg('fromname');
-		$sitename	= $app->getCfg('sitename');
-		$name		= $app->getCfg('sitename');
-		$email		= $app->getCfg('mailfrom');
-		$subject	= $subject;
-		$body		= $message;
-
-		# Prepare email body
-		$body	= $name.' <'.$email.'>'."\r\n\r\n".stripslashes($body);
-
-		$mail = JFactory::getMailer();
-		$mail->addRecipient($params->get( 'er_bizemail' ));
-		$mail->addReplyTo(array($email, $name));
-		$mail->setSender(array($mailfrom, $fromname));
-		$mail->setSubject($sitename.': '.$subject);
-		$mail->setBody($body);
-		$sent = $mail->Send();
+        self::sendMsg($subject, $message, $params);
 
 	}
 
 	function updateMailmsg ( $theid ) {
 
-		$app		= JFactory::getApplication();
 		$params = JComponentHelper::getParams ('com_ezrealty');
 
 		# Build the message
 
 		$subject= stripslashes ( $params->get( 'er_bizname' ) ) .' '. JText::_('EZREALTY_UDLISTING_SAVED_SUBJECT');
-		$message.=JText::_('EZREALTY_UDLISTING_SAVED_MESSAGE')."\r\n\r\n";
+		$message=JText::_('EZREALTY_UDLISTING_SAVED_MESSAGE')."\r\n\r\n";
 		$message.=JText::_('EZREALTY_AD_NUMBER')." $theid \r\n ";
 
 		# Send the message
 
-		$mailfrom	= $app->getCfg('mailfrom');
-		$fromname	= $app->getCfg('fromname');
-		$sitename	= $app->getCfg('sitename');
-		$name		= $app->getCfg('sitename');
-		$email		= $app->getCfg('mailfrom');
-		$subject	= $subject;
-		$body		= $message;
-
-		# Prepare email body
-		$body	= $name.' <'.$email.'>'."\r\n\r\n".stripslashes($body);
-
-		$mail = JFactory::getMailer();
-		$mail->addRecipient($params->get( 'er_bizemail' ));
-		$mail->addReplyTo(array($email, $name));
-		$mail->setSender(array($mailfrom, $fromname));
-		$mail->setSubject($sitename.': '.$subject);
-		$mail->setBody($body);
-		$sent = $mail->Send();
+        self::sendMsg($subject, $message, $params);
 
 	}
 
+	/**
+	 * @param $subject
+	 * @param $message
+	 * @param $params
+	 */
+	private function sendMsg($subject, $message, $params)
+	{
+
+        $app		= JFactory::getApplication();
+
+        # Send the message
+
+		$mailfrom = $app->getCfg('mailfrom');
+		$fromname = $app->getCfg('fromname');
+		$sitename = $app->getCfg('sitename');
+		$name = $app->getCfg('sitename');
+		$email = $app->getCfg('mailfrom');
+
+		# Prepare email body
+		$body = $name . ' <' . $email . '>' . "\r\n\r\n" . stripslashes($message);
+
+		$mail = JFactory::getMailer();
+		$mail->addRecipient($params->get('er_bizemail'));
+		$mail->addReplyTo($email, $name);
+		$mail->setSender(array($mailfrom, $fromname));
+		$mail->setSubject($sitename . ': ' . $subject);
+		$mail->setBody($body);
+		$mail->Send();
+	}
 
 
 }
